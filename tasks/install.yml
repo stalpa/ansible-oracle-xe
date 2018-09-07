@@ -84,6 +84,3 @@
   file:
     state: absent
     path: "{{ mktemp.stdout }}"
-
-#- name: "Configure Database"
-#  include: sql.yml

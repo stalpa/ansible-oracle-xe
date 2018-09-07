@@ -1,10 +1,10 @@
 ---
 
-#- name: "Install Database"
-#  include: install.yml
+- name: "Install Database"
+  include: install.yml
 
-#- name: "Configure Database"
-#  include: sql.yml
+- name: "Configure Database"
+  include: sql.yml
 
 - name: "Configure Backup"
   include: backup.yml
