@@ -1,0 +1,30 @@
+---
+
+- name: "Create directory"
+  file:
+    path: /root/bin
+    state: directory
+    owner: oracle
+    group: dba
+
+- name: "Template backup_daily.sh"
+  template:
+     src: backup_daily.sh
+     dest: /root/bin/backup_daily.sh
+     owner: oracle
+     group: dba
+
+- name: "Manage cron"
+  cron:
+    name: "Backup DB"
+    minute: "00"
+    hour: "04"
+    job: "/root/bin/backup_daily.sh"
+
+- name: "Create Backup dir"
+  file:
+     path: /backups
+     state: directory
+     recurse: yes
+     owner: oracle
+     group: dba
