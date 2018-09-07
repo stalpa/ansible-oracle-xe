@@ -13,6 +13,7 @@
      dest: /root/bin/backup_daily.sh
      owner: oracle
      group: dba
+     mode: a+x
 
 - name: "Manage cron"
   cron:
